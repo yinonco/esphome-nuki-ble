@@ -1,2 +1,1 @@
-# ESPHome Nuki BLE Component
-# This component provides direct BLE communication with Nuki Smart Locks
+# Empty __init__.py file to make this a Python package
