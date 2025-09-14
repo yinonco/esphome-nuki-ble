@@ -1,6 +1,6 @@
 # ESPHome Nuki BLE Component
 
-A custom ESPHome component for direct BLE communication with Nuki Smart Locks without requiring a Nuki Bridge.
+Custom ESPHome component for direct BLE communication with Nuki Smart Locks without requiring a Nuki Bridge.
 
 ## Features
 

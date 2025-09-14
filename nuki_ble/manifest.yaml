@@ -15,3 +15,8 @@ codeowners:
   - "@esphome/core"
 requirements:
   espressif32: ">=4.0.0"
+dependencies:
+  - source:
+      type: git
+      url: https://github.com/I-Connect/NukiBleEsp32.git
+      ref: main
