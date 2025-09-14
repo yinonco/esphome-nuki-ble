@@ -1,1 +1,2 @@
-# Empty __init__.py file to make this a Python package
+# ESPHome Nuki BLE Component
+# This component provides direct BLE communication with Nuki Smart Locks
