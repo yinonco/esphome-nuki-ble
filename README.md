@@ -50,7 +50,16 @@ lock:
     device_name: "ESP32-Nuki"
     device_id: 12345678  # Your Nuki device ID
     pin_code: "1234"     # Your Nuki pin code (optional)
+    pairing_mode: "app"  # Pair as app (won't affect your Nuki Bridge)
 ```
+
+### Pairing Modes
+
+- **`app`** (default): Pairs as a Nuki app - **recommended** if you have a Nuki Bridge
+- **`bridge`**: Pairs as a Nuki Bridge
+- **`fob`**: Pairs as a Nuki Fob
+
+**Important**: If you already have a Nuki Bridge, use `pairing_mode: "app"` to avoid conflicts.
 
 ### Full Configuration Example
 
@@ -77,6 +86,7 @@ lock:
     device_name: "ESP32-Nuki"
     device_id: 12345678
     pin_code: "1234"
+    pairing_mode: "app"  # Won't affect your Nuki Bridge
     
     # Sensors
     battery_level:

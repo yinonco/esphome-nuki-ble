@@ -110,6 +110,7 @@
 3. **Add the configuration**:
    - Copy the content from `nuki_ble_example.yaml`
    - Replace the device_name, device_id, and pin_code with your values
+   - Set `pairing_mode: "app"` to avoid conflicts with your Nuki Bridge
    - Update WiFi credentials if using secrets
 
 4. **Save and compile**:
@@ -132,6 +133,16 @@ The configuration is already optimized for your ESP32-S3-WROOM-1-N8 board:
 3. Go to Settings → Lock Settings
 4. Look for "Device ID" or "Lock ID"
 5. Use this number in your configuration
+
+### Pairing Modes
+
+The component supports different pairing modes:
+
+- **`app`** (default): Pairs as a Nuki app - **recommended** if you have a Nuki Bridge
+- **`bridge`**: Pairs as a Nuki Bridge
+- **`fob`**: Pairs as a Nuki Fob
+
+**Important**: If you already have a Nuki Bridge, use `pairing_mode: "app"` to avoid conflicts. This allows both your bridge and ESP32 to work simultaneously.
 
 ### Pairing Process
 

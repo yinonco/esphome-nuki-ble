@@ -55,6 +55,7 @@ void NukiBleComponent::dump_config() {
   ESP_LOGCONFIG(TAG, "  Device Name: %s", device_name_.c_str());
   ESP_LOGCONFIG(TAG, "  Device ID: %u", device_id_);
   ESP_LOGCONFIG(TAG, "  Pin Code: %s", pin_code_.empty() ? "Not set" : "Set");
+  ESP_LOGCONFIG(TAG, "  Pairing Mode: %s", pairing_mode_.c_str());
   
   LOG_LOCK("", "Nuki BLE Lock", this);
   LOG_SENSOR("  ", "Battery Level", battery_level_sensor_);

@@ -25,6 +25,7 @@ class NukiBleComponent : public lock::Lock, public Component {
   void set_device_name(const std::string &device_name) { device_name_ = device_name; }
   void set_device_id(uint32_t device_id) { device_id_ = device_id; }
   void set_pin_code(const std::string &pin_code) { pin_code_ = pin_code; }
+  void set_pairing_mode(const std::string &pairing_mode) { pairing_mode_ = pairing_mode; }
   
   // Sensors
   void set_battery_level_sensor(sensor::Sensor *battery_level_sensor) { battery_level_sensor_ = battery_level_sensor; }
@@ -62,6 +63,7 @@ class NukiBleComponent : public lock::Lock, public Component {
   std::string device_name_;
   uint32_t device_id_;
   std::string pin_code_;
+  std::string pairing_mode_;
   
   Nuki::NukiLock *nuki_lock_;
   BleScanner::Scanner *scanner_;

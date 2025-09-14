@@ -1,0 +1,47 @@
+# Nuki BLE Pairing Modes Examples
+
+## App Mode (Recommended for Bridge Users)
+
+```yaml
+lock:
+  - platform: nuki_ble
+    device_name: "ESP32-Nuki"
+    device_id: 12345678
+    pin_code: "1234"
+    pairing_mode: "app"  # Won't affect your Nuki Bridge
+```
+
+**Use this if**: You already have a Nuki Bridge and want to add ESP32 as an additional control method.
+
+## Bridge Mode
+
+```yaml
+lock:
+  - platform: nuki_ble
+    device_name: "ESP32-Nuki"
+    device_id: 12345678
+    pin_code: "1234"
+    pairing_mode: "bridge"  # Pairs as a bridge
+```
+
+**Use this if**: You want to replace your Nuki Bridge with ESP32.
+
+## Fob Mode
+
+```yaml
+lock:
+  - platform: nuki_ble
+    device_name: "ESP32-Nuki"
+    device_id: 12345678
+    pin_code: "1234"
+    pairing_mode: "fob"  # Pairs as a fob
+```
+
+**Use this if**: You want ESP32 to behave like a Nuki Fob.
+
+## Important Notes
+
+- **App mode is recommended** if you have an existing Nuki Bridge
+- Each pairing mode has different capabilities and limitations
+- You can have multiple devices paired in different modes simultaneously
+- The ESP32 will appear as a separate device in your Nuki app when using app mode

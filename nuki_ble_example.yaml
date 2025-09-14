@@ -45,6 +45,7 @@ lock:
     device_name: "ESP32-Nuki"
     device_id: 12345678  # Replace with your Nuki device ID
     pin_code: "1234"     # Replace with your Nuki pin code (optional)
+    pairing_mode: "app"  # Pair as app (won't affect your Nuki Bridge)
     
     # Sensors
     battery_level:

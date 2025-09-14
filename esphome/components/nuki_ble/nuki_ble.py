@@ -31,6 +31,7 @@ NukiBleComponent = nuki_ble_ns.class_("NukiBleComponent", lock.Lock, cg.Componen
 CONF_DEVICE_NAME = "device_name"
 CONF_DEVICE_ID = "device_id"
 CONF_PIN_CODE = "pin_code"
+CONF_PAIRING_MODE = "pairing_mode"
 
 CONFIG_SCHEMA = (
     lock.LOCK_SCHEMA.extend(
@@ -39,6 +40,7 @@ CONFIG_SCHEMA = (
             cv.Required(CONF_DEVICE_NAME): cv.string,
             cv.Required(CONF_DEVICE_ID): cv.uint32_t,
             cv.Optional(CONF_PIN_CODE): cv.string,
+            cv.Optional(CONF_PAIRING_MODE, default="app"): cv.one_of("app", "bridge", "fob", lower=True),
             cv.Optional(CONF_BATTERY_LEVEL): sensor.sensor_schema(
                 unit_of_measurement="%",
                 accuracy_decimals=0,
@@ -90,6 +92,8 @@ async def to_code(config):
     
     if CONF_PIN_CODE in config:
         cg.add(var.set_pin_code(config[CONF_PIN_CODE]))
+    
+    cg.add(var.set_pairing_mode(config[CONF_PAIRING_MODE]))
 
     if CONF_BATTERY_LEVEL in config:
         sens = await sensor.new_sensor(config[CONF_BATTERY_LEVEL])
