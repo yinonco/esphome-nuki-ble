@@ -1,0 +1,18 @@
+{
+  "domain": "nuki_ble",
+  "name": "Nuki BLE Lock",
+  "version": "1.0.0",
+  "documentation": "https://github.com/I-Connect/NukiBleEsp32",
+  "requirements": [],
+  "dependencies": [
+    {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/I-Connect/NukiBleEsp32.git",
+        "ref": "main"
+      }
+    }
+  ],
+  "codeowners": ["@esphome/core"],
+  "platforms": ["esp32", "esp32s2", "esp32s3", "esp32c3", "esp32h2"]
+}
